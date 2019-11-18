@@ -13,3 +13,27 @@ body {
 .invalid-feedback {
   display: block; 
 }
+
+.header{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-item{
+  text-align: center;
+  font-weight: bold;
+}
+.header-item_number {
+  color: #ffffff;
+  background-color: #999999;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+}
+.header-item_number.active{
+  border: 3px solid #ff00ff;
+  background-color: #00ffff;
+  
+}
