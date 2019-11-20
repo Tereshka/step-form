@@ -28,28 +28,39 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.header-item:not(:first-child):before {
+.header-item:not(:last-child):after {
   content: " ";
-  border: 2px solid #999999;
+  border: 2px solid #173f5f;
   width: 30px;
   position: absolute;
   top: 20px;
-  left: -50px;
+  left: 70px;
 }
 .header-item_number {
   color: #ffffff;
-  background-color: #999999;
+  background-color: #173f5f;
+  border: 3px solid #173f5f;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  padding: 9px;
+  line-height: 36px;
 }
-
-
-.header-item_number.active{
-  border: 3px solid #ff00ff;
-  background-color: #00ffff;
-  
+.header-item.active > .header-item_number{
+  border: 3px solid #f6d55c;
+  background-color: #3caea3;
+}
+.header-item.completed > .header-item_number{
+  border: 3px solid #f6d55c;
+  background-color: #f6d55c;
+  color: #ed553b;
+}
+.header-item.completed:not(:last-child):after {
+  content: " ";
+  border: 2px solid #f6d55c;
+  width: 30px;
+  position: absolute;
+  top: 20px;
+  left: 70px;
 }
 
 .avatar{

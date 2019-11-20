@@ -29,18 +29,22 @@ export default class App extends React.Component {
       {
         number: 1,
         label: 'Basic',
+        completed: false,
       },
       {
         number: 2,
         label: 'Contacts',
+        completed: false,
       },
       {
         number: 3,
         label: 'Avatar',
+        completed: false,
       },
       {
         number: 4,
         label: 'Finish',
+        completed: false,
       },
     ],
   }
@@ -72,12 +76,18 @@ export default class App extends React.Component {
     this.setState({ errors });
 
     if (Object.keys(errors).length === 0) {
-      this.setState({ currentStep: currentStep + 1 });
+      let newSteps = [...this.state.steps ];
+      let step = newSteps.find(el => el.number === currentStep);
+      step.completed = true;
+      this.setState({ currentStep: currentStep + 1, steps: newSteps });
     }
   }
 
   onPreviousButtonClick = () => {
-    this.setState({ currentStep: this.state.currentStep - 1 });
+    let newSteps = [...this.state.steps ];
+    let step = newSteps.find(el => el.number === (this.state.currentStep - 1));
+    step.completed = false;
+    this.setState({ currentStep: this.state.currentStep - 1, steps: newSteps });
   }
 
   onResetButtonClick = () => {
