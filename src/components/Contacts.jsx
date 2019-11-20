@@ -60,6 +60,7 @@ export default function Contacts(props) {
         >
           {renderCountryOptions(countries)}
         </select>
+        {errors.country ? <div className="invalid-feedback">{errors.country}</div> : null}
       </div>
       <div className="form-group">
         <label htmlFor="country">City</label>
@@ -73,7 +74,7 @@ export default function Contacts(props) {
           <option value="">Select city</option>
           {renderCityOptions(citiesByCountry)}
         </select>
-        {errors.country ? <div className="invalid-feedback">{errors.country}</div> : null}
+        {errors.city ? <div className="invalid-feedback">{errors.city}</div> : null}
       </div>
     </>
   );

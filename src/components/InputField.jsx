@@ -8,7 +8,7 @@ const InputField = props => {
       <input
         id={id}
         type={type}
-        className="form-control"
+        className={`form-control ${error ? 'invalid' : ''}`}
         placeholder={placeholder}
         name={name}
         value={value}

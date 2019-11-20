@@ -57,7 +57,10 @@ export default class App extends React.Component {
       newUser[event.target.name] = event.target.value;
     }
 
-    this.setState({ user: newUser });
+    let newErrors = { ...this.state.errors };
+    delete newErrors[event.target.name];
+    
+    this.setState({ user: newUser, errors: newErrors });
   }
 
   onChangeAvatar = event => {

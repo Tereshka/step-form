@@ -63,6 +63,10 @@ body {
   left: 70px;
 }
 
+.form-control.invalid {
+  border: 1px solid #dc3545;
+}
+
 .avatar{
   width: 100%;
 }
