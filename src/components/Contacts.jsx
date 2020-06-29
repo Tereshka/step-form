@@ -16,15 +16,15 @@ export default function Contacts(props) {
   };
 
   const renderCityOptions = items => {
-    return items.map((country, index) => (
-      <option key={index} value={country.name}>
-        {country.name}
+    return items.map((city, index) => (
+      <option key={index} value={city.name}>
+        {city.name}
       </option>
     ));
   };
 
   const citiesByCountry =
-    cities.filter(city => city.country === country)
+    cities.filter(city => city.country === +country)
       .map((el, index) => { return { id: index, name: el.name }; });
 
   return (

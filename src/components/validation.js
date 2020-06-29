@@ -1,5 +1,7 @@
 const validation = (step, user) => {
   const errors = {};
+  const REGEX_EMAIL = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+  const REGEX_PHONE = /^\+?([0-9]{1})\)?[-. (]?([0-9]{3})[-. )]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/;
   switch (step) {
     case 1:
       if (!user.firstName) {
@@ -26,12 +28,12 @@ const validation = (step, user) => {
     case 2:
       if (!user.email) {
         errors.email = 'Required';
-      } else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.email)) {
+      } else if (!REGEX_EMAIL.test(user.email)) {
         errors.email = 'Invalid email address';
       }
       if (!user.phone) {
         errors.phone = 'Required';
-      } else if (!/^\+?([0-9]{1})\)?[-. (]?([0-9]{3})[-. )]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/.test(user.phone)) {
+      } else if (!REGEX_PHONE.test(user.phone)) {
         errors.phone = 'Invalid mobile: +X(XXXX)XXX-XX-XX';
       }
       if (user.country === -1) {

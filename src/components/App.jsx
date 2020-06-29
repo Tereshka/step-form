@@ -49,28 +49,18 @@ export default class App extends React.Component {
     ],
   }
 
-  onChangeInput = event => {
-    let newUser = { ...this.state.user };
-    if (event.target.name === 'country') {
-      newUser[event.target.name] = parseInt(event.target.value);
-    } else {
-      newUser[event.target.name] = event.target.value;
-    }
-
-    let newErrors = { ...this.state.errors };
-    delete newErrors[event.target.name];
-    
-    this.setState({ user: newUser, errors: newErrors });
-  }
-
-  onChangeAvatar = event => {
-    const reader = new FileReader();
-    reader.onload = e => {
-      let newUser = { ...this.state.user };
-      newUser.avatar = e.target.result;
-      this.setState({ user: newUser });
-    };
-    reader.readAsDataURL(event.target.files[0]);
+  onChangeInput = e => {
+    const {name, value} = e.target;
+    this.setState(state => ({
+      user: {
+        ...state.user,
+        [name]: value,
+      },
+      errors: {
+        ...state.errors,
+        [name]: null,
+      },
+    }));
   }
 
   onNextButtonClick = () => {
@@ -123,7 +113,7 @@ export default class App extends React.Component {
             currentStep === 3 &&
             <Avatar
               user={user}
-              onChangeInput={this.onChangeAvatar}
+              onChangeInput={this.onChangeInput}
               errors={errors}
             />
           }
