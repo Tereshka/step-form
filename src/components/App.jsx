@@ -51,6 +51,14 @@ export default class App extends React.Component {
 
   onChangeInput = e => {
     const {name, value} = e.target;
+    if (name === 'country') {
+      this.setState(state => ({
+        user: {
+          ...state.user,
+          city: '',
+        }
+      }));
+    }
     this.setState(state => ({
       user: {
         ...state.user,
