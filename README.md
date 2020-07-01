@@ -1,3 +1,11 @@
+## Step form: React [Live Demo](https://tereshka.github.io/step-form)
+
+Create a step form with React styled by bootstrap
+- 1 step: basic information
+- 2 step: constact information
+- 3 step: loading avatar iamge
+- 4 step: overview of input data
+
 
 ## Задание. Форма
 

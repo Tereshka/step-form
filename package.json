@@ -1,6 +1,6 @@
 {
-  "name": "reactwarriors-form-task",
-  "homepage": "https://tereshka.github.io/reactwarriors-form-task",
+  "name": "step-form",
+  "homepage": "https://tereshka.github.io/step-form",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
